@@ -48731,6 +48731,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
+        axios.get('/posts').then(function (resp) {
+            _this.posts = resp.data;
+        });
         __WEBPACK_IMPORTED_MODULE_0__event_js__["a" /* default */].$on('added_tweet', function (post) {
             _this.posts.unshift(post);
         });

@@ -23,6 +23,10 @@
             }
         },
         mounted() {
+
+            axios.get('/posts').then((resp => {
+                this.posts = resp.data;
+            }));
             Event.$on('added_tweet', (post) => {
                 this.posts.unshift(post);
             });
